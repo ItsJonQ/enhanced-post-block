@@ -1,4 +1,7 @@
 import React from 'react';
+import styled from '@emotion/styled';
+import { Preview as BasePreview } from '../Preview';
+
 import { Section, SectionHeader } from '../Section';
 import { Column } from '../Column';
 import { Post } from '../Post';
@@ -44,3 +47,36 @@ function mapPostToColumns(posts = []) {
 		return collection;
 	}, []);
 }
+
+const PreviewView = styled(BasePreview)`
+	display: flex;
+	flex-wrap: wrap;
+`;
+
+const ColView = styled.div`
+	&:first-child {
+		width: 65%;
+		padding-right: 10px;
+	}
+	&:last-child {
+		width: 35%;
+	}
+`;
+
+function Preview() {
+	return (
+		<PreviewView>
+			<ColView>
+				<BasePreview.Post height={20} />
+				<BasePreview.Post height={60} />
+			</ColView>
+			<ColView>
+				<BasePreview.Post height={20} />
+				<BasePreview.Post height={20} />
+				<BasePreview.Post height={20} />
+			</ColView>
+		</PreviewView>
+	);
+}
+
+Bigline.Preview = Preview;

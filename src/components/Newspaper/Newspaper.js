@@ -1,4 +1,7 @@
 import React from 'react';
+import styled from '@emotion/styled';
+import { Preview as BasePreview } from '../Preview';
+
 import { Section, SectionHeader } from '../Section';
 import { Column } from '../Column';
 import { Post } from '../Post';
@@ -44,3 +47,42 @@ function mapPostToColumns(posts = []) {
 		return collection;
 	}, []);
 }
+
+const PreviewView = styled(BasePreview)`
+	display: flex;
+	flex-wrap: wrap;
+`;
+
+const ColView = styled.div`
+	&:nth-child(1),
+	&:nth-child(3) {
+		width: 20%;
+	}
+	&:nth-child(2) {
+		width: 60%;
+		padding: 0 5px;
+	}
+`;
+
+function Preview() {
+	return (
+		<PreviewView>
+			<ColView>
+				<BasePreview.Post height={45} />
+				<BasePreview.Post height={15} />
+				<BasePreview.Post height={15} />
+			</ColView>
+			<ColView>
+				<BasePreview.Post height={50} />
+				<BasePreview.Post height={30} />
+			</ColView>
+			<ColView>
+				<BasePreview.Post height={45} />
+				<BasePreview.Post height={15} />
+				<BasePreview.Post height={15} />
+			</ColView>
+		</PreviewView>
+	);
+}
+
+Newspaper.Preview = Preview;
