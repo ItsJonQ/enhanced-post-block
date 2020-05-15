@@ -1,52 +1,34 @@
-.newspaper {
-	box-sizing: border-box;
+.Newspaper {
 	font-family: sans-serif;
 	margin: 0 auto;
 	font-size: 16px;
 	padding: 0 1em;
 
-	* {
-		box-sizing: border-box;
-	}
-
-	&__grid {
+	&__Grid {
 		display: flex;
 		flex-wrap: wrap;
 	}
 
-	.post {
+	.Post {
 		border-bottom: 1px solid #eee;
 
 		&:last-child {
 			border: none;
 		}
 
-		&__content {
+		&__Content {
 			padding: 1.5em 0;
 		}
 
-		&__title {
+		&__Title {
 			font-weight: bolder;
 			padding: 0 0 0.4em;
-			margin: 0;
-			line-height: 1.1;
 		}
 
-		&__excerpt {
+		&__Excerpt {
 			font-size: 0.8em;
 			line-height: 1.4;
 			margin: 0;
-		}
-
-		&__link {
-			color: currentColor;
-			text-decoration: none;
-		}
-
-		&__image {
-			max-width: 100%;
-			width: 100%;
-			height: auto;
 		}
 	}
 
@@ -55,119 +37,119 @@
 			padding: 0 1em;
 		}
 
-		.column {
+		.Column {
 			width: 100%;
 		}
 
-		.post:not(.post-0) {
+		.Post:not(.Post-0) {
 			border-bottom: 1px solid #eee;
 			display: flex;
 			align-items: flex-start;
 			padding: 1.5em 0;
 
-			.post__title {
+			.Post__Title {
 				font-size: 1em;
 			}
 
-			.post__thumbnail {
+			.Post__Thumbnail {
 				width: 100px;
 			}
 
-			.post__content {
+			.Post__Content {
 				padding: 0 0 0 1em;
 				flex: 1;
 			}
 		}
 
-		.post__excerpt {
+		.Post__Excerpt {
 			display: none;
 		}
 	}
 
 	@media (min-width: 600px) {
-		.column {
+		.Column {
 			width: 22.5%;
 		}
 
-		.column-0 {
+		.Column-0 {
 			order: 1;
 			width: 55%;
 			padding: 0 1.5em;
 		}
 
-		.column-2 {
+		.Column-2 {
 			order: 3;
 		}
 
-		.post-0 {
-			.post__title {
+		.Post-0 {
+			.Post__Title {
 				font-size: 2.2em;
 				text-align: center;
 			}
 
-			.post__excerpt {
+			.Post__Excerpt {
 				font-size: 1em;
 				text-align: center;
 			}
 		}
 
-		.post-1 {
+		.Post-1 {
 			display: flex;
 			align-items: flex-start;
 			padding: 1.5em 0;
 
-			.post__thumbnail {
+			.Post__Thumbnail {
 				max-width: 200px;
 			}
 
-			.post__content {
+			.Post__Content {
 				padding: 0 0 0 1.5em;
 			}
 		}
 
-		.post-1,
-		.post-2,
-		.post-5 {
-			.post__title {
+		.Post-1,
+		.Post-2,
+		.Post-5 {
+			.Post__Title {
 				font-size: 1.2em;
 			}
 		}
 
-		.post-3,
-		.post-4,
-		.post-6,
-		.post-7 {
-			.post__title {
+		.Post-3,
+		.Post-4,
+		.Post-6,
+		.Post-7 {
+			.Post__Title {
 				font-size: 1em;
 			}
-			img {
+			.Post__Image {
 				display: none;
 			}
 		}
 
-		.post-4,
-		.post-7 {
+		.Post-4,
+		.Post-7 {
 			border: none;
 		}
 	}
 
 	@media (min-width: 600px) and (max-width: 880px) {
-		.column-0 {
+		.Column-0 {
 			flex-grow: 1;
 			padding-right: 0;
 		}
 
-		.column-1 {
+		.Column-1 {
 			flex-grow: 1;
 		}
 
-		.column-2 {
+		.Column-2 {
 			border-top: 1px solid #eee;
 			padding: 1.5em 1em;
 			width: 100%;
 			display: flex;
 
-			.post {
+			.Post {
 				border: none;
 				flex: 1;
 				padding-right: 1em;
@@ -176,25 +158,25 @@
 					padding-right: 0;
 				}
 
-				&__thumbnail {
+				&__Thumbnail {
 					display: none;
 				}
 			}
 		}
 
-		.post-1,
-		.post-2,
-		.post-5 {
-			.post__title {
+		.Post-1,
+		.Post-2,
+		.Post-5 {
+			.Post__Title {
 				font-size: 1em;
 			}
 		}
 
-		.post-3,
-		.post-4,
-		.post-6,
-		.post-7 {
-			.post__title {
+		.Post-3,
+		.Post-4,
+		.Post-6,
+		.Post-7 {
+			.Post__Title {
 				font-size: 1em;
 			}
 		}

@@ -5,4 +5,5 @@ export * from './Section';
 
 // Styles
 export * from './Bigline';
+export * from './Gridlike';
 export * from './Newspaper';

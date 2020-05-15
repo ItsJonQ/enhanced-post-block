@@ -1,0 +1,17 @@
+.Post {
+	&__Title {
+		line-height: 1.1;
+		margin: 0;
+	}
+
+	&__Image {
+		max-width: 100%;
+		width: 100%;
+		height: auto;
+	}
+
+	&__Link {
+		color: currentColor;
+		text-decoration: none;
+	}
+}

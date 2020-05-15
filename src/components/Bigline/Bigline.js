@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionHeader } from '../Section';
+import { Section, SectionHeader } from '../Section';
 import { Column } from '../Column';
 import { Post } from '../Post';
 
@@ -7,18 +7,14 @@ export function Bigline({ posts = [], title = 'Top Stories' }) {
 	const columns = mapPostToColumns(posts);
 
 	return (
-		<div className="bigline">
+		<Section className="Bigline">
 			<SectionHeader title={title} />
-			<div className="bigline__grid">
+			<div className="Bigline__Grid">
 				{columns.map((column, index) => {
 					return (
 						<Column key={`col-${index}`} index={index}>
-							{column.map((post, postIndex) => (
-								<Post
-									key={post.id}
-									className={`post-${post.postIndex}`}
-									{...post}
-								>
+							{column.map(({ excerpt, ...post }) => (
+								<Post key={post.id} {...post}>
 									{post.title}
 								</Post>
 							))}
@@ -26,7 +22,7 @@ export function Bigline({ posts = [], title = 'Top Stories' }) {
 					);
 				})}
 			</div>
-		</div>
+		</Section>
 	);
 }
 

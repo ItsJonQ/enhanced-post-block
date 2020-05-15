@@ -1,4 +1,12 @@
-.section-header {
+.Section {
+	box-sizing: border-box;
+
+	* {
+		box-sizing: border-box;
+	}
+}
+
+.SectionHeader {
 	box-sizing: border-box;
 	padding: 1em 0 1.5em;
 
@@ -6,7 +14,7 @@
 		box-sizing: border-box;
 	}
 
-	&__title {
+	&__Title {
 		margin: 0;
 		font-weight: bolder;
 		font-size: 1em;

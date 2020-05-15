@@ -3,12 +3,12 @@ import React from 'react';
 export function PostThumbnail({ image, url, title }) {
 	if (!image) return null;
 
-	const imageMarkup = <img className="post__image" src={image} alt={title} />;
+	const imageMarkup = <img className="Post__Image" src={image} alt={title} />;
 
 	return (
-		<div className="post__thumbnail">
+		<div className="Post__Thumbnail">
 			{url ? (
-				<a href={url} className="post__thumbnail-link post__link">
+				<a href={url} className="Post__ThumbnailLink Post__Link">
 					{imageMarkup}
 				</a>
 			) : (

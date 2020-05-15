@@ -4,8 +4,8 @@ export function SectionHeader({ title }) {
 	if (!title) return null;
 
 	return (
-		<header className="section-header">
-			<h2 className="section-header__title">{title}</h2>
+		<header className="SectionHeader">
+			<h2 className="SectionHeader__Title">{title}</h2>
 		</header>
 	);
 }
