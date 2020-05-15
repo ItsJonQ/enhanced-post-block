@@ -1,0 +1,16 @@
+.section-header {
+	box-sizing: border-box;
+	padding: 1em 0 1.5em;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	&__title {
+		margin: 0;
+		font-weight: bolder;
+		font-size: 1em;
+		border-bottom: 1px solid #eee;
+		padding-bottom: 1em;
+	}
+}

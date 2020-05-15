@@ -3,13 +3,13 @@ import { SectionHeader } from '../Section';
 import { Column } from '../Column';
 import { Post } from '../Post';
 
-export function Newspaper({ posts = [], title = 'Top Stories' }) {
+export function Bigline({ posts = [], title = 'Top Stories' }) {
 	const columns = mapPostToColumns(posts);
 
 	return (
-		<div className="newspaper">
+		<div className="bigline">
 			<SectionHeader title={title} />
-			<div className="newspaper__grid">
+			<div className="bigline__grid">
 				{columns.map((column, index) => {
 					return (
 						<Column key={`col-${index}`} index={index}>
@@ -32,8 +32,8 @@ export function Newspaper({ posts = [], title = 'Top Stories' }) {
 
 function mapPostToColumns(posts = []) {
 	return posts.reduce((collection, post, index) => {
-		if (index > 7) return collection;
-		const chunk = Math.round(index / 3);
+		if (index > 4) return collection;
+		const chunk = index === 0 ? 0 : 1;
 
 		if (!collection[chunk]) {
 			collection[chunk] = [];
