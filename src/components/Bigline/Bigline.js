@@ -67,13 +67,14 @@ function Preview() {
 	return (
 		<PreviewView>
 			<ColView>
-				<BasePreview.Post height={20} />
-				<BasePreview.Post height={60} />
+				<BasePreview.Post height={10} />
+				<BasePreview.Post height={45} />
 			</ColView>
 			<ColView>
-				<BasePreview.Post height={20} />
-				<BasePreview.Post height={20} />
-				<BasePreview.Post height={20} />
+				<BasePreview.Post height={10} />
+				<BasePreview.Post height={10} />
+				<BasePreview.Post height={10} />
+				<BasePreview.Post height={10} />
 			</ColView>
 		</PreviewView>
 	);

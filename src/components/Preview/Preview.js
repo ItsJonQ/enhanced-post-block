@@ -4,8 +4,8 @@ import { css } from '@emotion/core';
 const PreviewView = styled.div`
 	box-sizing: border-box;
 	background: #ddd;
-	width: 180px;
-	height: 110px;
+	width: 120px;
+	height: 80px;
 	overflow: hidden;
 	padding: 10px;
 
