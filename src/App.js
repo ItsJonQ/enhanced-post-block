@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import ViewportFrame from 'react-viewport-frame';
 import { posts as postData } from './data';
 import { Bigline, Gridlike, Newspaper } from './components';
 import './styles';
@@ -41,7 +42,9 @@ function App() {
 			</SidebarView>
 			<BodyView>
 				<ContentView>
-					<PostDisplayComponent posts={postData} />
+					<ViewportFrame>
+						<PostDisplayComponent posts={postData} />
+					</ViewportFrame>
 				</ContentView>
 			</BodyView>
 		</WrapperView>
