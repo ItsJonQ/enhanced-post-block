@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import styled from '@emotion/styled';
 import ViewportFrame from 'react-viewport-frame';
 import { posts as postData } from './data';
@@ -18,6 +18,22 @@ const postDisplayTypes = Object.keys(postDisplayTypeComponents);
 function App() {
 	const [postDisplayType, setPostDisplayType] = useState(postDisplayTypes[0]);
 	const PostDisplayComponent = postDisplayTypeComponents[postDisplayType];
+	const [frameStyles, setFrameStyles] = useState('');
+
+	useLayoutEffect(() => {
+		const styles = [];
+		const stylesheets = Object.values(document.styleSheets);
+		stylesheets.forEach((sheet) => {
+			Object.values(sheet.cssRules).forEach((rule) => {
+				styles.push(rule.cssText);
+			});
+		});
+
+		const compiledStyles = styles.join('\n');
+		setFrameStyles(compiledStyles);
+	}, []);
+
+	const initialHeight = window.innerHeight * 0.8;
 
 	return (
 		<WrapperView>
@@ -42,7 +58,8 @@ function App() {
 			</SidebarView>
 			<BodyView>
 				<ContentView>
-					<ViewportFrame>
+					<ViewportFrame height={initialHeight}>
+						<style>{frameStyles}</style>
 						<PostDisplayComponent posts={postData} />
 					</ViewportFrame>
 				</ContentView>
@@ -62,13 +79,11 @@ const WrapperView = styled.div`
 `;
 
 const BodyView = styled.div`
-	padding: 20px;
-	overflow-y: auto;
 	flex: 1;
 `;
 
 const ContentView = styled.div`
-	max-width: 1200px;
+	max-width: calc(100vw - 240px);
 	margin: 0 auto;
 `;
 
@@ -76,7 +91,7 @@ const SidebarView = styled.div`
 	padding: 20px;
 	border-right: 1px solid #ddd;
 	overflow-y: auto;
-	width: 300px;
+	width: 240px;
 `;
 
 const DisplayItemView = styled.button`
